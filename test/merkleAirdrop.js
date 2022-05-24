@@ -41,7 +41,7 @@ contract('MerkleAirdrop', (accounts) => {
     assert(await merkleAirdrop.isClaimed(otherAccount) === false)
   })
 
-  it('Should be able claim the airdrop', async () =>{
+  it('Should be able claim to the airdrop', async () =>{
     const leafNodesWithAirdropAmount = [owner, otherAccount].map(
       (x, ind) => web3.utils.soliditySha3({type: 'address', value: x},{type: 'uint256', value: (((ind+1)*10**15)+'')})
     )
@@ -54,7 +54,7 @@ contract('MerkleAirdrop', (accounts) => {
     assert(await merkleAirdrop.isClaimed(otherAccount) === true)
   })
 
-  it('Should not be able claim the airdrop', async () =>{
+  it('Should not be able to claim the airdrop', async () =>{
     const leafNodesWithAirdropAmount = [owner, otherAccount].map(
       (x, ind) => web3.utils.soliditySha3({type: 'address', value: x},{type: 'uint256', value: (((ind+1)*10**15)+'')})
     )
